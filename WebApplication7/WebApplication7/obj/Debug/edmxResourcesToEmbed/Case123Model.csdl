@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbCrudModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Case1">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Case2">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Case3">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="DbCrudEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Case1" EntityType="Self.Case1" />
+    <EntitySet Name="Case2" EntityType="Self.Case2" />
+    <EntitySet Name="Case3" EntityType="Self.Case3" />
+    <FunctionImport Name="SP_GetCase1" ReturnType="Collection(DbCrudModel1.SP_GetCase1_Result)">
+      <Parameter Name="age" Mode="In" Type="String" />
+      <Parameter Name="pageno" Mode="In" Type="Int32" />
+      <Parameter Name="pagesize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCase2" ReturnType="Collection(DbCrudModel1.SP_GetCase2_Result)">
+      <Parameter Name="age" Mode="In" Type="String" />
+      <Parameter Name="pageno" Mode="In" Type="Int32" />
+      <Parameter Name="pagesize" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_GetCase3" ReturnType="Collection(DbCrudModel1.SP_GetCase3_Result)">
+      <Parameter Name="age" Mode="In" Type="String" />
+      <Parameter Name="pageno" Mode="In" Type="Int32" />
+      <Parameter Name="pagesize" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_GetCase1_Result">
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="age" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetCase2_Result">
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="age" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_GetCase3_Result">
+    <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="age" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

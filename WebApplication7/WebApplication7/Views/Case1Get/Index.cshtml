@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebApplication7.Case1>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>API Search Lifeboat Crew and Passenger in Titanic</h2>
+
+@using (Html.BeginForm("Index", "Case1Search", FormMethod.Post))
+{
+    <span id="age">Age</span>
+    <input id="text1" type="text" name="umur" />
+    <span id="pageno">Lifeboat</span>
+    <input id="text2" type="text" name="lifeboat" />
+    <span id="pagesize">Size</span>
+    <input id="text3" type="text" name="size" />
+    <input id="Submit" type="submit" value="Search" class="btn btn-primary" />
+}
+
+<table class="table">
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+        </tr>
+    }
+
+</table>

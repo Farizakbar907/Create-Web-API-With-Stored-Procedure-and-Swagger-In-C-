@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbCrudModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Case1">
+    <Key>
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="age" Type="varchar" MaxLength="50" />
+    <Property Name="role" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Function Name="GenapGanjil" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="age" Type="varchar" Mode="In" />
+    <Parameter Name="pageno" Type="int" Mode="In" />
+    <Parameter Name="pagesize" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="DbCrudModelStoreContainer">
+    <EntitySet Name="Case1" EntityType="Self.Case1" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

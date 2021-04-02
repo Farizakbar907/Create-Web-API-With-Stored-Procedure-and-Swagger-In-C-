@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbCrudModelStoreContainer" CdmEntityContainer="DbCrudEntities">
+    <EntitySetMapping Name="Case1">
+      <EntityTypeMapping TypeName="DbCrudModel.Case1">
+        <MappingFragment StoreEntitySet="Case1">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GenapGanjil" FunctionName="DbCrudModel.Store.GenapGanjil">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbCrudModel.GenapGanjil_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbCrudModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Case1">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="age" Type="varchar" MaxLength="50" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Case2">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="age" Type="varchar" MaxLength="50" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Case3">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="age" Type="varchar" MaxLength="50" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Function Name="SP_GetCase1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="age" Type="varchar" Mode="In" />
+          <Parameter Name="pageno" Type="int" Mode="In" />
+          <Parameter Name="pagesize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GetCase2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="age" Type="varchar" Mode="In" />
+          <Parameter Name="pageno" Type="int" Mode="In" />
+          <Parameter Name="pagesize" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_GetCase3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="age" Type="varchar" Mode="In" />
+          <Parameter Name="pageno" Type="int" Mode="In" />
+          <Parameter Name="pagesize" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="DbCrudModel1StoreContainer">
+          <EntitySet Name="Case1" EntityType="Self.Case1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Case2" EntityType="Self.Case2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Case3" EntityType="Self.Case3" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbCrudModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Case1">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Case2">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Case3">
+          <Key>
+            <PropertyRef Name="name" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DbCrudEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Case1" EntityType="Self.Case1" />
+          <EntitySet Name="Case2" EntityType="Self.Case2" />
+          <EntitySet Name="Case3" EntityType="Self.Case3" />
+          <FunctionImport Name="SP_GetCase1" ReturnType="Collection(DbCrudModel1.SP_GetCase1_Result)">
+            <Parameter Name="age" Mode="In" Type="String" />
+            <Parameter Name="pageno" Mode="In" Type="Int32" />
+            <Parameter Name="pagesize" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetCase2" ReturnType="Collection(DbCrudModel1.SP_GetCase2_Result)">
+            <Parameter Name="age" Mode="In" Type="String" />
+            <Parameter Name="pageno" Mode="In" Type="Int32" />
+            <Parameter Name="pagesize" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_GetCase3" ReturnType="Collection(DbCrudModel1.SP_GetCase3_Result)">
+            <Parameter Name="age" Mode="In" Type="String" />
+            <Parameter Name="pageno" Mode="In" Type="Int32" />
+            <Parameter Name="pagesize" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="SP_GetCase1_Result">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="age" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_GetCase2_Result">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="age" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="SP_GetCase3_Result">
+          <Property Type="String" Name="name" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="age" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbCrudModel1StoreContainer" CdmEntityContainer="DbCrudEntities1">
+          <EntitySetMapping Name="Case1">
+            <EntityTypeMapping TypeName="DbCrudModel1.Case1">
+              <MappingFragment StoreEntitySet="Case1">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Case2">
+            <EntityTypeMapping TypeName="DbCrudModel1.Case2">
+              <MappingFragment StoreEntitySet="Case2">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Case3">
+            <EntityTypeMapping TypeName="DbCrudModel1.Case3">
+              <MappingFragment StoreEntitySet="Case3">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetCase1" FunctionName="DbCrudModel1.Store.SP_GetCase1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbCrudModel1.SP_GetCase1_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetCase2" FunctionName="DbCrudModel1.Store.SP_GetCase2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbCrudModel1.SP_GetCase2_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="SP_GetCase3" FunctionName="DbCrudModel1.Store.SP_GetCase3">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DbCrudModel1.SP_GetCase3_Result">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="age" ColumnName="age" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

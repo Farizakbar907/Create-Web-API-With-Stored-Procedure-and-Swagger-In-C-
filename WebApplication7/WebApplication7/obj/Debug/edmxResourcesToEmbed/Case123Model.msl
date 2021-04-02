@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DbCrudModel1StoreContainer" CdmEntityContainer="DbCrudEntities1">
+    <EntitySetMapping Name="Case1">
+      <EntityTypeMapping TypeName="DbCrudModel1.Case1">
+        <MappingFragment StoreEntitySet="Case1">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case2">
+      <EntityTypeMapping TypeName="DbCrudModel1.Case2">
+        <MappingFragment StoreEntitySet="Case2">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Case3">
+      <EntityTypeMapping TypeName="DbCrudModel1.Case3">
+        <MappingFragment StoreEntitySet="Case3">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCase1" FunctionName="DbCrudModel1.Store.SP_GetCase1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbCrudModel1.SP_GetCase1_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCase2" FunctionName="DbCrudModel1.Store.SP_GetCase2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbCrudModel1.SP_GetCase2_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_GetCase3" FunctionName="DbCrudModel1.Store.SP_GetCase3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DbCrudModel1.SP_GetCase3_Result">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="age" ColumnName="age" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
